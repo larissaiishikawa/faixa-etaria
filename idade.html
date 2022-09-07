@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra sua faixa etária</title>
+    <style>
+        body {
+            background-color: rgb(183, 134, 230);
+        }
+    </style>
+</head>
+<body>
+    <h1>Descubra sua faixa etária</h1>
+    Digite sua idade:<input type="number" name="idade" id="idade">
+    <input type="button" value="Verificar" onclick="clicar()">
+    <div id="res"></div>
+    <script>
+        function clicar() {
+            var idade = document.getElementById('idade').value
+            var idade = Number(idade)
+            var res = document.getElementById('res')
+            res.innerHTML = `<p>Você tem <strong>${idade}</strong> anos.</p>`
+             if (idade > 65) {
+                res.innerHTML += `Você é <strong>idoso</strong>.`
+            } else if (idade > 30) {
+                res.innerHTML += `Você é <strong>adulto</strong>.`
+            } else if (idade > 21) {
+                res.innerHTML += `Você é <strong>jovem adulto</strong>.`
+            } else if (idade > 13) {
+                res.innerHTML += `Você é <strong>adolescente</strong>.`
+            } else {
+                res.innerHTML += `Você é <strong>criança</strong>.`
+            }
+        }
+    </script>
+</body>
+</html>
